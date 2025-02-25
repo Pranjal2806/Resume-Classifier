@@ -2,6 +2,10 @@
 # pip install streamlit scikit-learn python-docx PyPDF2
 
 import streamlit as st
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
 import pickle
 import docx  # To handle Word files
 import PyPDF2  # To handle PDF files
@@ -73,15 +77,16 @@ def main():
     """Main function to run the Streamlit app."""
     st.set_page_config(page_title="Resume Category Prediction", page_icon="📄", layout="centered")
 
-    st.title("Resume Category Prediction App")
+    st.title("Resume Category Prediction Page")
     st.markdown("Upload a resume (PDF, DOCX, or TXT format), and the app will predict its category.")
 
     uploaded_file = st.file_uploader("Upload Your Resume", type=["pdf", "docx", "txt"])
-
+    
     if uploaded_file:
         try:
             resume_text = handle_uploaded_file(uploaded_file)
             st.success("Resume text extracted successfully.")
+           
 
             if st.checkbox("Show Extracted Text", value=False):
                 st.text_area("Extracted Resume Text", resume_text, height=300)
@@ -89,7 +94,7 @@ def main():
             # Predict category
             st.subheader("Prediction Result")
             predicted_category = predict_resume_category(resume_text)
-            st.write(f"The predicted category is: **{predicted_category}**")
+            st.write(f"The predicted category of the candidate: **{predicted_category}**")
 
         except Exception as e:
             st.error(f"An error occurred: {e}")
