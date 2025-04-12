@@ -5,28 +5,6 @@
 This project helps HR professionals and recruiters automatically classify resumes into relevant job categories using a machine learning model trained on real-world data. Upload any resume in .pdf, .docx, or .txt format, and the app will predict the most suitable job role from 25 categories.
 
 
-
-
-
-## Project overview
-
-
- Step-by-Step Flow:
-File Upload: User uploads resumes in .pdf, .docx, or .txt format.
-
-Text Extraction: Text is extracted based on file type.
-
-Text Cleaning: The text is cleaned by removing links, special characters, and redundant spaces.
-
-Vectorization: Cleaned text is converted into numerical data using TF-IDF.
-
-Prediction: KNN model classifies the resume into one of 25 predefined job categories.
-
-Output: The predicted job role is displayed and exportable as CSV.
-
-
-
-
 ## Project overview
 
 ### 🔧  Working of the Project
@@ -45,7 +23,7 @@ File Upload: User uploads resumes in .pdf, .docx, or .txt format.
 
 5. Output: The predicted job role is displayed and exportable as CSV.
 
-### 4. Implementation Details
+###  Implementation Details
 🔍 Preprocessing:
 Removal of stop words, URLs, and special characters.
 
